@@ -1,11 +1,13 @@
-<h1>
-    Im a blade Task Php
-</h1>
+@extends('layout.app')
+ 
+@section('title', 'Im a blade Task Php')
 
-<div>
-    @forelse ( $tasks as $task)
-    <a href="{{ route('tasks.show', ['id' => $task->id]) }}">{{ $task->title }}</a>
-    @empty
-        <div>I dont have tasks</div>
-    @endforelse ()
-</div>
+@section('content')
+    
+@forelse ( $tasks as $task)
+<a href="{{ route('tasks.show', ['id' => $task->id]) }}">{{ $task->title }}</a>
+@empty
+<div>I dont have tasks</div>
+@endforelse ()
+
+@endsection
