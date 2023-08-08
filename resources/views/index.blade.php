@@ -1,13 +1,21 @@
 @extends('layout.app')
 
-@section('title', 'Im a blade Task Php')
+@section('title', 'The list of tasks')
 
 @section('content')
 
-@forelse ( $tasks as $task)
-<a href="{{ route('tasks.show', ['task' => $task->id]) }}">{{ $task->title }}</a> <br />
-@empty
-<div>I dont have tasks</div>
-@endforelse ()
+    @forelse ( $tasks as $task)
+        <div>
+            <a href="{{ route('tasks.show', ['task' => $task->id]) }}">{{ $task->title }}</a> <br />
+        </div>
+    @empty
+        <div>There are no tasks!</div>
+    @endforelse
+
+    @if ($tasks->count())
+        <nav>
+            {{ $tasks->links() }}
+        </nav>
+    @endif
 
 @endsection

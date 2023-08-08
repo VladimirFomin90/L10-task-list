@@ -23,7 +23,7 @@ Route::get('/', function () {
 // GET All tasks
 Route::get('/tasks', function () {
     return view('index', [
-        'tasks' => Task::latest()->get(),
+        'tasks' => Task::latest()->paginate(12)
     ]);
 })->name('tasks.index');
 
@@ -72,3 +72,4 @@ Route::delete('/tasks/{task}', function (Task $task) {
 Route::fallback(function () {
     return 'Still got somewhere!';
 });
+

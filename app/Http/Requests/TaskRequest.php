@@ -17,8 +17,8 @@ class TaskRequest extends FormRequest
     {
         return [
             'title' => 'required|max:50',
-            'description' => 'required|max:140',
-            'long_description' => 'required|max:255'
+            'description' => 'required|max:255',
+            'long_description' => 'required|max:400'
         ];
     }
 }

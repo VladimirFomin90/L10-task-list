@@ -11,8 +11,4 @@ class Task extends Model
 
     protected $fillable = ['title', 'description', 'long_description'];
 
-    // public function getRouteKeyName()
-    // {
-    //     return 'slug';
-    // }
 }
