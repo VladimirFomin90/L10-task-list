@@ -12,7 +12,7 @@
     @forelse ( $tasks as $task)
         <div>
             <a href="{{ route('tasks.show', ['task' => $task->id]) }}"
-                @class(['line-through' => $task->completed, 'font-bold'])>{{ $task->title }}</a> <br />
+                @class(['line-through' => $task->completed])>{{ $task->title }}</a> <br />
         </div>
     @empty
         <div>There are no tasks!</div>
